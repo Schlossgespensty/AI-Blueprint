@@ -113,7 +113,7 @@
 	"FletcherSetting": "Both", //put either "Bows", "Crossbows", or "Both". Decides what the AIs Fletcher settings are set to. If "Both" is chosen, the first will be set to Bows, the second to Crossbows, the third to Bows, etc.
 	"PoleturnerSetting": "Both", //put either "Spears", "Pikes", or "Both". Decides what the AIs Poleturner settings are set to. If "Both" is chosen, the first will be set to Spears, the second to Pikes, the third to Spears, etc.
 
-	"SellResource01": "Wheat", //Recources that are always insantly sold by the AI, if obtained. Enter "None" if you dont want the AI to sell it. Bread, Cheese, Meat, Apples and Wood are also possible entries.
+	"SellResource01": "Wheat", //Recources that, if obtained, are always insantly sold by the AI. Enter "None" if you dont want the AI to sell it. Bread, Cheese, Meat, Apples and Wood are also possible entries.
 	"SellResource02": "Flour",
 	"SellResource03": "Hop",
 	"SellResource04": "Beer",
