@@ -65,21 +65,20 @@
 	"Unknown003": 0, //unused
 	"Unknown004": 0, //unused
 	"Unknown005": 0, //unused
-	"CriticalPopularity": 6500,
-	"LowestPopularity": 9700,
-	"HighestPopularity": 9900,
-	"TaxesMin": 1,
-	"TaxesMax": 11,
+	"CriticalPopularity": 6500, //Below this popularity, the AI sells goods aggressively to raise gold. 10000 = 100 popularity. 
+	"LowestPopularity": 9700, //Below this popularity, AI sets taxes towards TaxesMin and gives extra rations until HighestPopularity is reached. 10000 = 100 popularity. 
+	"HighestPopularity": 9900, //Above this popularity, AI increases taxes until a stable popularity modifier of up to -3 is achieved. 10000 = 100 popularity.
+	"TaxesMin": 0, //Minimum tax level allowed. 0 = +7, 11 = -24.
+	"TaxesMax": 11, //Maximum tax level allowed. 0 = +7, 11 = -24.
 	"Unknown011": 20, //unused
-	"Farm1": "WheatFarm",
-	"Farm2": "DairyFarm",
-	"Farm3": "AppleFarm",
-	"Farm4": "HopFarm",
-	"Farm5": "WheatFarm",
-	"Farm6": "DairyFarm",
-	"Farm7": "AppleFarm",
-	"Farm8": "HopFarm",
-
+	"Farm1": "WheatFarm", //type of the 1. Farm that the AI builds.
+	"Farm2": "DairyFarm", //type of the 2. Farm that the AI builds.
+	"Farm3": "AppleFarm", //type of the 3. Farm that the AI builds.
+	"Farm4": "HopFarm",   //type of the 4. Farm that the AI builds.
+	"Farm5": "WheatFarm", //type of the 5. Farm that the AI builds.
+	"Farm6": "DairyFarm", //type of the 6. Farm that the AI builds.
+	"Farm7": "AppleFarm", //type of the 7. Farm that the AI builds.
+	"Farm8": "HopFarm",   //type of the 8. Farm that the AI builds. After the 8. farm the AI will start over from the top. Destroyed farms will not be replaced by the same type of farm, but with the next in the queue.
 	"PopulationPerFarm": 6,
 	"PopulationPerWoodcutter": 1,
 	"PopulationPerQuarry": 18,
@@ -90,25 +89,25 @@
 	"MaxWoodcutters": 15,
 	"MaxPitchrigs": 10,
 	"MaxFarms": 28,
-	"BuildInterval": 2,
-	"ResourceRebuildDelay": 0,
-	"MaxFood": 52,
-	"MinimumApples": -1,
-	"MinimumCheese": -1,
-	"MinimumBread": -1,
-	"MinimumWheat": 31,
-	"MinimumHop": 1,
-	"TradeAmountFood": 6,
-	"TradeAmountEquipment": 12,
-	"AIRequestDelay": 10,
-	"MinimumGoodsRequiredAfterTrade": 10,
-	"DoubleRationsFoodThreshold": 500,
-	"MaxWood": 266,
-	"MaxStone": 40,
-	"MaxResourceOther": 8,
-	"MaxEquipment": 45,
-	"MaxBeer": 6, //
-	"MaxResourceVariance": 5, //the deviation allowed from any "Max[Recource]" Value. If "MaxBeer" = 5 and this Value = 2, the AI will sell all beer above 5 as soon as 8 or more (>5+2) beer are stocked.  
+	"BuildInterval": 2, //the speed at which the AI builds. Counts for everything, AIV buildings, non-AIV buildings and all kinds of repairs. 1 is the fastest.
+	"ResourceRebuildDelay": 0, //the time the AI waits before trying to rebuild a non-AIV recource building.
+	"MaxFood": 52, //the maximum amount stored of Apples, Cheese, Meat, Bread, Wheat and Hop (+ResourceVariance on top). Amount choosen is per type, NOT combined.
+	"MinimumApples": 0, //If the amount of apples stored falls below this value, the AI will buy [TradeAmountFood] apples, until reaching this value again. If = 0, the AI will never buy apples. If = -1 the AI will sell all apples.
+	"MinimumCheese": 0, //If the amount of cheese stored falls below this value, the AI will buy [TradeAmountFood] cheese, until reaching this value again. If = 0, the AI will never buy cheese. If = -1 the AI will sell all cheese.
+	"MinimumBread": 0, //If the amount of bread stored falls below this value, the AI will buy [TradeAmountFood] bread, until reaching this value again. If = 0, the AI will never buy bread. If = -1 the AI will sell all bread. Can be better to leave at 0 and buy wheat instead with bread-eco
+	"MinimumWheat": 0, //If the amount of wheat stored falls below this value, the AI will buy [TradeAmountFood] wheat, until reaching this value again. If = 0, the AI will never buy wheat. If = -1 the AI will sell all wheat
+	"MinimumHop": 0, //If the amount of hop stored falls below this value, the AI will buy [TradeAmountFood] hop, until reaching this value again. If = 0, the AI will never buy hop. If = -1 the AI will sell all hop
+	"TradeAmountFood": 6, //The amount of food the AI buys at a time. At a low value each purchase is cheaper (more reliable to happen) but may increases the amount of purchases needed (slower restocking of goods, may cause short shortages).
+	"TradeAmountEquipment": 12, //The amount of Weapons the AI buys at a time. At a low value each purchase is cheaper (more reliable to happen) but may increases the amount of purchases needed (slower restocking of weapons, may cause short shortages).
+	"AIRequestDelay": 10, //the frequency with which the AI asks the player for resources (lower value -> more frequent).
+	"MinimumGoodsRequiredAfterTrade": 10, //On recource request of a player: the amount of a recource, that needs to be left over after the trade for the AI to agree to it. Otherwise the AI will decline the trade.
+	"DoubleRationsFoodThreshold": 500, //If the combined amount of Apples, Cheese, Meat and Bread is bigger than this value, the AI will give double rations.
+	"MaxWood": 266, //the maximum amount stored of Wood (+ResourceVariance on top).
+	"MaxStone": 40, //the maximum amount stored of Stone (+ResourceVariance on top).
+	"MaxResourceOther": 8, //the maximum amount stored of Iron, Pitch and Flour (+ResourceVariance on top). Amount choosen is per type, NOT combined.
+	"MaxEquipment": 45, //the maximum amount stored of Weapons and Armors (+ResourceVariance on top). Amount choosen is per type, NOT combined.
+	"MaxBeer": 6, //the maximum amount stored of Beer (+ResourceVariance on top).
+	"MaxResourceVariance": 5, //the deviation allowed from any "Max[Recource]" Value. If "MaxBeer" = 5 and this Value = 2, the AI will sell all but 5 beer as soon as 8 or more (>5+2) beer are stocked.  
 	"RecruitGoldThreshold": 0, //the minimum amount of gold the AI needs to have, before it starts recruiting units.
 	"BlacksmithSetting": "Swords", //put either "Swords", "Maces", or "Both". Decides what the AIs Blacksmith settings are set to. If "Both" is chosen, the first will be set to Swords, the second to Maces, the third to Swords, etc.
 	"FletcherSetting": "Both", //put either "Bows", "Crossbows", or "Both". Decides what the AIs Fletcher settings are set to. If "Both" is chosen, the first will be set to Bows, the second to Crossbows, the third to Bows, etc.
